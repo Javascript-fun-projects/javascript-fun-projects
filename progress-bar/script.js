@@ -38,6 +38,16 @@ function updateProgressBar() {
     
     let total = (((activeCircles.length - 1 ) / (circles.length -1)) * 100) + '%';
     progress.style.width = total;
+
+    if(currentActive == 1){
+        prev.disabled = true;
+    }else if (currentActive == 4) {
+        next.disabled = true;
+    } else {
+        prev.disabled = false;
+        next.disabled = false;
+    }
+    
 }
 
 
