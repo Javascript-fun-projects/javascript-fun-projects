@@ -1,0 +1,97 @@
+@import url('https://fonts.googleapis.com/css?family=Muli:wght@400;700&display=swap');
+
+*,
+*::after,
+*::before {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+
+body {
+  font-family: 'Muli', sans-serif;
+  height: 100vh;
+  overflow: hidden;
+  margin: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.container {
+  display: flex;
+  justify-content: center;
+  width: 90vw;
+}
+
+.panel {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  height: 80vh;
+  border-radius: 50px;
+  position: relative;
+  color: #000;
+  margin: 10px;
+  flex: 0.5;
+  transition: all 1s ease-in;
+}
+
+.panel .testimonial {
+  display: flex;
+  flex-direction: column;
+  padding: 0 18px;
+  align-items: center;
+  justify-content: center;
+  width: 80%;
+  height: 28%;
+  opacity: 0;
+  transition: opacity 0.7s ease-in 0.5s;
+  transform: skewX(-12deg);
+  background-color: rgba(255, 255, 255, 0.6);
+}
+
+.hidden {
+  display: none;
+}
+
+.panel h3 {
+  font-size: 24px;
+  margin-bottom: 13px;
+  padding-bottom: 7px;
+  display: inline-block;
+  border-bottom: 5px solid #000;
+  opacity: 1;
+}
+
+.panel.active {
+  flex: 5;
+}
+
+.panel.active .testimonial {
+  opacity: 1;
+}
+
+@media (max-width: 800px) {
+  .container {
+    width: 100vw;
+  }
+
+  .panel:nth-of-type(5) {
+    display: none;
+  }
+}
+
+@media (max-width: 480px) {
+  .container {
+    width: 100vw;
+  }
+
+  .panel:nth-of-type(4),
+  .panel:nth-of-type(5) {
+    display: none;
+  }
+}
